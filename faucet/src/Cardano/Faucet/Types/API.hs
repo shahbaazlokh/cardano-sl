@@ -1,14 +1,14 @@
-{-# LANGUAGE ConstraintKinds            #-}
-{-# LANGUAGE DeriveAnyClass             #-}
-{-# LANGUAGE DeriveGeneric              #-}
-{-# LANGUAGE DuplicateRecordFields      #-}
-{-# LANGUAGE FlexibleInstances          #-}
-{-# LANGUAGE MultiParamTypeClasses      #-}
-{-# LANGUAGE OverloadedStrings          #-}
-{-# LANGUAGE ScopedTypeVariables        #-}
-{-# LANGUAGE TemplateHaskell            #-}
-{-# LANGUAGE TupleSections              #-}
-{-# LANGUAGE TypeFamilies               #-}
+{-# LANGUAGE ConstraintKinds       #-}
+{-# LANGUAGE DeriveAnyClass        #-}
+{-# LANGUAGE DeriveGeneric         #-}
+{-# LANGUAGE DuplicateRecordFields #-}
+{-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE ScopedTypeVariables   #-}
+{-# LANGUAGE TemplateHaskell       #-}
+{-# LANGUAGE TupleSections         #-}
+{-# LANGUAGE TypeFamilies          #-}
 {-# OPTIONS_GHC -Wall #-}
 module Cardano.Faucet.Types.API (
    WithdrawlRequest(..), wAddress, gRecaptchaResponse
@@ -25,10 +25,10 @@ import           Data.Aeson (FromJSON (..), ToJSON (..), object, withObject,
                      (.:), (.=))
 import qualified Data.Char as Char
 import           Data.Monoid ((<>))
-import           Data.Text (Text)
 import           Data.Proxy
-import           Data.String (IsString(..))
+import           Data.String (IsString (..))
 import           Data.Swagger
+import           Data.Text (Text)
 import           Data.Typeable (Typeable)
 import           GHC.Generics (Generic)
 import           Web.FormUrlEncoded
@@ -50,7 +50,7 @@ instance IsString GCaptchaResponse where
 -- | A request to withdraw ADA from the faucet wallet
 data WithdrawlRequest = WithdrawlRequest {
     -- | The address to send the ADA to
-    _wAddress          :: !(V1 Address)
+    _wAddress           :: !(V1 Address)
     -- | The "g-recaptcha-response" field sent by the form
   , _gRecaptchaResponse :: !GCaptchaResponse
   } deriving (Show, Typeable, Generic)

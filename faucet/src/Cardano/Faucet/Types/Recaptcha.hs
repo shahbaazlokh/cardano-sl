@@ -25,7 +25,7 @@ import           Data.Text (Text)
 import           Data.Time.Clock (UTCTime)
 import           GHC.Generics (Generic)
 
-import Cardano.Faucet.Types.API
+import           Cardano.Faucet.Types.API
 
 --------------------------------------------------------------------------------
 newtype CaptchaSecret = CaptchaSecret Text deriving (Show, IsString)
