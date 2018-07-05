@@ -36,33 +36,28 @@ import           Cardano.Faucet.Types.Recaptcha
 import qualified Cardano.WalletClient as Client
 
 -- | Top level type of the faucet API
-type FaucetAPI = "api" :> "withdraw" :> Summary "Requests some ADA from the faucet"
-                                     :> ReqBody '[JSON] WithdrawlRequest :> Post '[JSON] WithdrawlResult
-                :<|> "withdraw" :> Summary "Requests ADA from the faucet via recaptcha enabled form"
-                                :> ReqBody '[FormUrlEncoded] WithdrawlFormRequest :> Post '[JSON] WithdrawlResult
-                :<|> Raw
+type FaucetAPI = "withdraw" :> Summary "Requests ADA from the faucet"
+                            :> ReqBody '[FormUrlEncoded, JSON] WithdrawlRequest
+                            :> Post '[JSON] WithdrawlResult
+            :<|> Raw
          -- :<|> "_deposit" :> ReqBody '[JSON] DepositRequest :> Post '[JSON] DepositResult
 
 faucetServerAPI :: Proxy FaucetAPI
 faucetServerAPI = Proxy
 
-formWithdraw :: (MonadFaucet c m) => WithdrawlFormRequest -> m WithdrawlResult
-formWithdraw wfr = withSublogger (LoggerName "formWithdraw") $ do
-    mCaptchaSecret <- view (feFaucetConfig . fcRecaptchaSecret)
-    forM_ mCaptchaSecret $ \captchaSecret -> do
-        let cr = CaptchaRequest captchaSecret (wfr ^. gRecaptchaResponse)
-        logInfo "Found a secret for recaptcha in config, attempting validation"
-        captchaResp <- liftIO $ captchaRequest cr
-        logInfo ("Recaptcha result: " <> (captchaResp ^. to show . packed))
-        unless (captchaResp ^. success) $ do
-            throwError $ err500 { errBody = captchaResp ^. errorCodes . to show . packedChars }
-    let wr = WithdrawlRequest (wfr ^. wfAddress)
-    withdraw wr
-
 -- | Handler for the withdrawl of ADA from the faucet
 withdraw :: (MonadFaucet c m) => WithdrawlRequest -> m WithdrawlResult
 withdraw wr = withSublogger (LoggerName "withdraw") $ do
     logInfo "Attempting to send ADA"
+    mCaptchaSecret <- view (feFaucetConfig . fcRecaptchaSecret)
+    forM_ mCaptchaSecret $ \captchaSecret -> do
+        let cr = CaptchaRequest captchaSecret (wr ^. gRecaptchaResponse)
+        logInfo "Found a secret for recaptcha in config, attempting validation"
+        captchaResp <- liftIO $ captchaRequest cr
+        logInfo ("Recaptcha result: " <> (captchaResp ^. to show . packed))
+        unless (captchaResp ^. success) $ do
+            let captchaErrs = captchaResp ^. errorCodes . to show . packedChars
+            throwError $ err500 { errBody = "Recaptcha had errors: " <> captchaErrs }
     resp <- Client.withdraw (wr ^. wAddress)
     case resp of
         Left _ -> do
@@ -90,4 +85,4 @@ _deposit dr = withSublogger (LoggerName "_deposit") $ do
 --
 -- TODO: Get the server path from the config
 faucetServer :: ServerT FaucetAPI M
-faucetServer = withdraw :<|> formWithdraw :<|> (retag $ serveDirectoryWebApp ".")
+faucetServer = withdraw :<|> (retag $ serveDirectoryWebApp ".")

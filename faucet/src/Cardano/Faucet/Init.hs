@@ -247,7 +247,6 @@ processWithdrawls fEnv = withSublogger "processWithdrawls" $ forever $ do
     (ProcessorPayload pmt tVarResult)<- liftIOA $ TBQ.readTBQueue pmtQ
     logInfo "Processing payment"
     resp <- liftIO $ postTransaction wc pmt
-    logInfo "Got response"
     case resp of
         Left err -> do
             let txtErr = err ^. to show . packed
@@ -258,7 +257,7 @@ processWithdrawls fEnv = withSublogger "processWithdrawls" $ forever $ do
         Right withDrawResp -> do
             let txn = wrData withDrawResp
                 amount = unV1 $ txAmount txn
-            logInfo ((withDrawResp ^. to show . packed)
+            logInfo ((withDrawResp ^. to (show . wrStatus) . packed)
                     <> " withdrew: "
                     <> (amount ^. to show . packed))
             liftIOA $ putTMVar tVarResult (WithdrawlSuccess txn)
