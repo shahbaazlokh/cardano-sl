@@ -270,7 +270,7 @@ intAndVerifyChain pc = runTranslateT $ do
       Right (chain', ctxt) -> do
         let chain'' = fromMaybe (error "intAndVerify: Nothing")
                     $ nonEmptyOldestFirst
-                    $ map Right chain'
+                    $ chain'
         isCardanoValid <- verifyBlocksPrefix chain''
         case (dslIsValid, isCardanoValid) of
           (Invalid _ e' , Invalid _ e) -> return $ ExpectedInvalid e' e

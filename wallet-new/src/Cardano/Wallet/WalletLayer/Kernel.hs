@@ -87,7 +87,7 @@ bracketPassiveWallet logFunction f =
     blundToResolvedBlock (b,u)
         = rightToJust b <&> \mainBlock ->
             fromRawResolvedBlock
-            $ UnsafeRawResolvedBlock mainBlock spentOutputs'
+            $ UnsafeRawResolvedBlock mainBlock Nothing spentOutputs'
         where
             spentOutputs' = map (map fromJust) $ undoTx u
             rightToJust   = either (const Nothing) Just

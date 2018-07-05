@@ -212,7 +212,7 @@ verifyBlocksPrefix blocks =
         validatedFromExceptT . throwError $ VerifyBlocksError "Empty epoch!"
       ESRStartsOnBoundary _    ->
         validatedFromExceptT . throwError $ VerifyBlocksError "No genesis epoch!"
-      ESRValid genEpoch _epochs -> withProtocolMagic $ \pm -> do
+      ESRValid genEpoch _succEpochs -> withProtocolMagic $ \pm -> do
         CardanoContext{..} <- asks tcCardano
         verify $ validateGenEpoch pm ccHash0 ccInitLeaders genEpoch -- and others
   where
@@ -283,7 +283,7 @@ splitEpochs blocks = case spanEpoch blocks of
 -- | Span the epoch until the next epoch boundary block.
 --
 --   - If the list of blocks starts with an EBB, this will return 'Left
---     EpochBlocks' containing the
+--     EpochBlocks' containing the EBB and the successive blocks.
 --   - If the list of blocks does not start with an EBB, this will return
 --     `Right (OldestFirst NE Block)` containg all blocks before the next
 --     EBB.
