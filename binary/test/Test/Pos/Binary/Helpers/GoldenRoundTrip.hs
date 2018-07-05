@@ -4,7 +4,9 @@ module Test.Pos.Binary.Helpers.GoldenRoundTrip
        ( goldenTestBi
        , embedGoldenTest
        , discoverGolden
+       , discoverJSON
        , discoverRoundTrip
+       , embedJSONTest
        , roundTripsBiShow
        , roundTripsBiBuildable
        , roundTripsAesonShow
@@ -107,11 +109,18 @@ embedGoldenTest :: FilePath -> ExpQ
 embedGoldenTest path =
     makeRelativeToTestDir ("golden/" <> path) >>= embedStringFile
 
+embedJSONTest :: FilePath -> ExpQ
+embedJSONTest path =
+    makeRelativeToTestDir ("json/" <> path) >>= embedStringFile
+
 discoverGolden :: TExpQ Group
 discoverGolden = discoverPrefix "golden_"
 
 discoverRoundTrip :: TExpQ Group
 discoverRoundTrip = discoverPrefix "roundTrip"
+
+discoverJSON :: TExpQ Group
+discoverJSON = discoverPrefix "jsongolden_"
 
 goldenTestBi :: (Bi a, Eq a, Show a, HasCallStack) => a -> FilePath -> Property
 goldenTestBi x path = withFrozenCallStack $ do

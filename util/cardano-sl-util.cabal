@@ -132,18 +132,29 @@ test-suite test
 
   other-modules:
                        Spec
+                       Test.Pos.Util.AesonTripping
                        Test.Pos.Util.Modifier
                        Test.Pos.Util.ModifierSpec
                        Test.Pos.Util.QuickCheck.Property
                        Test.Pos.Util.TimerSpec
+                       Test.Pos.Util.TempTH
 
-  build-depends:       base
+  build-depends:       aeson
+                     , base
+                     , bytestring
                      , async
+                     , cardano-crypto
+                     , cardano-sl-binary
+                     , cardano-sl-crypto
+                     , cardano-sl-core
                      , cardano-sl-util
+                     , ed25519
+                     , hedgehog
                      , hspec
                      , QuickCheck
                      , quickcheck-instances
                      , serokell-util >= 0.1.3.4
+                     , serokell-util
                      , stm
                      , text
                      , time

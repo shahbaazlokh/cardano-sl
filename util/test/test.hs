@@ -1,9 +1,12 @@
 import           Universum
 
-import           Test.Hspec (hspec)
-
 import           Spec (spec)
+import           Test.Hspec (hspec)
+import           Test.Pos.Util.AesonTripping (runTests, tests)
 
 main :: IO ()
-main =
+main = do
     hspec spec
+    runTests
+        [ Test.Pos.Util.AesonTripping.tests
+        ]

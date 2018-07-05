@@ -21,6 +21,7 @@ library
                        Test.Pos.Core.Arbitrary.Unsafe
 
   build-depends:       QuickCheck
+                     , aeson
                      , base
                      , base16-bytestring
                      , bytestring
