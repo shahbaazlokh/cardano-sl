@@ -212,9 +212,12 @@ verifyBlocksPrefix blocks =
         validatedFromExceptT . throwError $ VerifyBlocksError "Empty epoch!"
       ESRStartsOnBoundary _    ->
         validatedFromExceptT . throwError $ VerifyBlocksError "No genesis epoch!"
-      ESRValid genEpoch _succEpochs -> withProtocolMagic $ \pm -> do
+      ESRValid genEpoch (OldestFirst succEpochs) -> withProtocolMagic $ \pm -> do
         CardanoContext{..} <- asks tcCardano
-        verify $ validateGenEpoch pm ccHash0 ccInitLeaders genEpoch -- and others
+        verify $ validateGenEpoch pm ccHash0 ccInitLeaders genEpoch >>= \genUndos -> do
+          epochUndos <- sequence $ validateSuccEpoch pm <$> succEpochs
+          return $ foldl' (\a b -> a <> b) genUndos epochUndos
+
   where
     validateGenEpoch :: ProtocolMagic
                      -> HeaderHash
@@ -230,11 +233,11 @@ verifyBlocksPrefix blocks =
         ccInitLeaders
         (OldestFirst [])
         (Right <$> geb ::  OldestFirst NE Block)
-    _validateSuccEpoch :: ProtocolMagic
+    validateSuccEpoch :: ProtocolMagic
                        -> EpochBlocks NE
                        -> ( HasConfiguration
                             => Verify VerifyBlocksException (OldestFirst NE Undo))
-    _validateSuccEpoch pm (SuccEpochBlocks ebb emb) =
+    validateSuccEpoch pm (SuccEpochBlocks ebb emb) =
       Verify.verifyBlocksPrefix
         pm
         (ebb ^. headerHashG)
