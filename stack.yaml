@@ -48,9 +48,6 @@ packages:
 - wallet-new # The new (unreleased) version of the wallet
 - node-ipc
 - acid-state-exts
-- ../universum
-- ../serokell-util
-- ../log-warper
 
 # IOHK projects:
 
@@ -168,10 +165,10 @@ packages:
 
 # Because log-warper mainline depends on a lifted-async which depends upon a
 # buggy async
-# - location:
-#    git: https://github.com/angerman/log-warper.git
-#    commit: 13c21343897add4933b6efd10d6f8261a554b4ab
-#  extra-dep: true
+- location:
+    git: https://github.com/angerman/log-warper.git
+    commit: 4af8114fbcd5698a4e1fbc653031f0300e29faee
+  extra-dep: true
 
 # Exposes a custom discovery function so you can specify the prefix.
 # https://github.com/hedgehogqa/haskell-hedgehog/compare/master...input-output-hk:master
@@ -195,12 +192,19 @@ packages:
     commit: ecfd3b307d8d13a6d12aff03055f25a39a17e182
   extra-dep: true
 
+# Custom Universum prelude, that brings back some of the
+# formatting logic, as well as `pretty`.
+- location:
+    git: https://github.com/angerman/universum.git
+    commit: 7f1b2483f71cacdfd032fe447064d6e0a1df50fc
+  extra-dep: true
+
 # Need to adjust version bounds on serokell-util.
 # serokell-util has an upper bound preventing 6.3 for some reason
-# - location:
-#    git: https://github.com/angerman/serokell-util.git
-#    commit: 000b6cea24a9b33e0deff0a3e238e3f4e67f8610
-#  extra-dep: true
+- location:
+    git: https://github.com/angerman/serokell-util.git
+    commit: ac64fe013b5708677045870e1ff1df52ad29d5a7
+  extra-dep: true
 
 nix:
   shell-file: shell.nix
