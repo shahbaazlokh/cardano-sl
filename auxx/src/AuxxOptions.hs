@@ -19,7 +19,7 @@ import           Options.Applicative (CommandFields, Mod, Parser, command,
                      info, infoOption, long, maybeReader, metavar, option,
                      progDesc, subparser, value)
 import           Pos.Communication (NodeId)
-import           Serokell.Util.OptParse (strOption)
+import           Pos.Util.OptParse (strOption)
 import           Text.PrettyPrint.ANSI.Leijen (Doc)
 
 import           Paths_cardano_sl (version)
