@@ -5712,6 +5712,29 @@ description = "Injecting fields into aeson values";
 license = stdenv.lib.licenses.mit;
 
 }) {};
+"aeson-options" = callPackage
+({
+  mkDerivation
+, aeson
+, base
+, stdenv
+}:
+mkDerivation {
+
+pname = "aeson-options";
+version = "0.0.0";
+sha256 = "a0769e025d25c79d4a8ea64ad663f022a213280a9be94091ae3c05046d0e597c";
+libraryHaskellDepends = [
+aeson
+base
+];
+doHaddock = false;
+doCheck = false;
+homepage = "https://github.com/serokell/aeson-options";
+description = "Options to derive FromJSON/ToJSON instances";
+license = stdenv.lib.licenses.mit;
+
+}) {};
 "aeson-picker" = callPackage
 ({
   mkDerivation
@@ -14671,6 +14694,7 @@ license = stdenv.lib.licenses.bsd3;
 , acid-state
 , acid-state-exts
 , aeson
+, aeson-options
 , ansi-terminal
 , ansi-wl-pprint
 , async
@@ -14758,7 +14782,6 @@ license = stdenv.lib.licenses.bsd3;
 , tagged
 , template-haskell
 , text
-, text-format
 , time
 , time-units
 , tls
@@ -14790,6 +14813,7 @@ libraryHaskellDepends = [
 acid-state
 acid-state-exts
 aeson
+aeson-options
 ansi-terminal
 ansi-wl-pprint
 async
@@ -14863,7 +14887,6 @@ systemd
 tagged
 template-haskell
 text
-text-format
 time
 time-units
 tls
@@ -14933,7 +14956,6 @@ serokell-util
 stm
 tagged
 text
-text-format
 time
 time-units
 universum
@@ -15035,7 +15057,6 @@ license = stdenv.lib.licenses.mit;
 , stm
 , temporary
 , text
-, text-format
 , time-units
 , transformers
 , universum
@@ -15103,7 +15124,6 @@ serokell-util
 split
 stm
 text
-text-format
 time-units
 transformers
 universum
@@ -15195,7 +15215,6 @@ license = stdenv.lib.licenses.mit;
 , tagged
 , template-haskell
 , text
-, text-format
 , th-utilities
 , time-units
 , transformers
@@ -15280,7 +15299,6 @@ serokell-util
 tagged
 template-haskell
 text
-text-format
 time-units
 universum
 unordered-containers
@@ -15323,7 +15341,6 @@ license = stdenv.lib.licenses.mit;
 , tagged
 , template-haskell
 , text
-, text-format
 , universum
 }:
 mkDerivation {
@@ -15361,7 +15378,6 @@ safecopy
 tagged
 template-haskell
 text
-text-format
 universum
 ];
 libraryToolDepends = [
@@ -15376,6 +15392,7 @@ license = stdenv.lib.licenses.mit;
 ({
   mkDerivation
 , aeson
+, aeson-options
 , base
 , bytestring
 , cardano-sl-binary
@@ -15426,7 +15443,6 @@ license = stdenv.lib.licenses.mit;
 , stdenv
 , stm
 , text
-, text-format
 , time-units
 , transformers
 , universum
@@ -15445,6 +15461,7 @@ configureFlags = [
 ];
 libraryHaskellDepends = [
 aeson
+aeson-options
 base
 bytestring
 cardano-sl-binary
@@ -15482,7 +15499,6 @@ safe-exceptions
 serokell-util
 stm
 text
-text-format
 time-units
 transformers
 universum
@@ -15517,7 +15533,6 @@ quickcheck-instances
 random
 serokell-util
 text
-text-format
 time-units
 universum
 unordered-containers
@@ -15607,7 +15622,6 @@ license = stdenv.lib.licenses.mit;
 , random
 , stdenv
 , text
-, text-format
 , universum
 }:
 mkDerivation {
@@ -15648,7 +15662,6 @@ QuickCheck
 quickcheck-instances
 random
 text
-text-format
 universum
 ];
 doHaddock = false;
@@ -15688,7 +15701,6 @@ license = stdenv.lib.licenses.mit;
 , serokell-util
 , stdenv
 , stm
-, text-format
 , transformers
 , universum
 , unordered-containers
@@ -15727,7 +15739,6 @@ QuickCheck
 safe-exceptions
 serokell-util
 stm
-text-format
 transformers
 universum
 unordered-containers
@@ -15768,6 +15779,7 @@ license = stdenv.lib.licenses.mit;
 ({
   mkDerivation
 , aeson
+, aeson-options
 , ansi-terminal
 , base
 , base16-bytestring
@@ -15817,7 +15829,6 @@ license = stdenv.lib.licenses.mit;
 , stdenv
 , template-haskell
 , text
-, text-format
 , th-lift-instances
 , time
 , time-units
@@ -15837,6 +15848,7 @@ configureFlags = [
 ];
 libraryHaskellDepends = [
 aeson
+aeson-options
 ansi-terminal
 base
 base58-bytestring
@@ -15873,7 +15885,6 @@ safecopy
 serokell-util
 template-haskell
 text
-text-format
 th-lift-instances
 time
 time-units
@@ -16043,7 +16054,6 @@ license = stdenv.lib.licenses.mit;
 , stdenv
 , template-haskell
 , text
-, text-format
 , universum
 , unordered-containers
 }:
@@ -16083,7 +16093,6 @@ safecopy
 scrypt
 serokell-util
 text
-text-format
 universum
 unordered-containers
 ];
@@ -16194,7 +16203,6 @@ license = stdenv.lib.licenses.mit;
 , rocksdb-haskell-ng
 , serokell-util
 , stdenv
-, text-format
 , transformers
 , universum
 }:
@@ -16229,7 +16237,6 @@ mtl
 resourcet
 rocksdb-haskell-ng
 serokell-util
-text-format
 transformers
 universum
 ];
@@ -16245,6 +16252,7 @@ license = stdenv.lib.licenses.mit;
 ({
   mkDerivation
 , aeson
+, aeson-options
 , base
 , cardano-sl-binary
 , cardano-sl-core
@@ -16274,7 +16282,6 @@ license = stdenv.lib.licenses.mit;
 , safe-exceptions
 , serokell-util
 , stdenv
-, text-format
 , time
 , time-units
 , transformers
@@ -16294,6 +16301,7 @@ configureFlags = [
 ];
 libraryHaskellDepends = [
 aeson
+aeson-options
 base
 cardano-sl-binary
 cardano-sl-core
@@ -16321,7 +16329,6 @@ resourcet
 rocksdb-haskell-ng
 safe-exceptions
 serokell-util
-text-format
 time
 time-units
 transformers
@@ -16442,7 +16449,6 @@ license = stdenv.lib.licenses.mit;
 , stm
 , swagger2
 , text
-, text-format
 , time
 , time-units
 , transformers
@@ -16515,7 +16521,6 @@ servant-server
 socket-io
 stm
 text
-text-format
 time
 time-units
 transformers
@@ -16645,7 +16650,6 @@ license = stdenv.lib.licenses.mit;
 , serokell-util
 , stdenv
 , text
-, text-format
 , time-units
 , transformers-base
 , universum
@@ -16696,7 +16700,6 @@ random
 safe-exceptions
 serokell-util
 text
-text-format
 time-units
 transformers-base
 universum
@@ -16751,6 +16754,7 @@ license = stdenv.lib.licenses.mit;
 ({
   mkDerivation
 , aeson
+, aeson-options
 , async
 , base
 , base64-bytestring
@@ -16801,7 +16805,6 @@ license = stdenv.lib.licenses.mit;
 , tar
 , template-haskell
 , text
-, text-format
 , time
 , time-units
 , transformers
@@ -16822,6 +16825,7 @@ configureFlags = [
 ];
 libraryHaskellDepends = [
 aeson
+aeson-options
 async
 base
 base64-bytestring
@@ -16868,7 +16872,6 @@ tagged
 tar
 template-haskell
 text
-text-format
 time
 time-units
 transformers
@@ -16963,7 +16966,6 @@ license = stdenv.lib.licenses.mit;
 , reflection
 , rocksdb-haskell-ng
 , stdenv
-, text-format
 , universum
 , unliftio
 , unordered-containers
@@ -16996,7 +16998,6 @@ lens
 log-warper
 reflection
 rocksdb-haskell-ng
-text-format
 universum
 unliftio
 unordered-containers
@@ -17103,7 +17104,6 @@ license = stdenv.lib.licenses.mit;
 , stdenv
 , stm
 , text
-, text-format
 , time
 , time-units
 , transformers
@@ -17154,7 +17154,6 @@ safe-exceptions
 serokell-util
 stm
 text
-text-format
 time
 time-units
 transformers
@@ -17350,7 +17349,6 @@ license = stdenv.lib.licenses.mit;
 , tar
 , template-haskell
 , text
-, text-format
 , time
 , time-units
 , transformers
@@ -17410,7 +17408,6 @@ tagged
 tar
 template-haskell
 text
-text-format
 time
 time-units
 transformers
@@ -17430,6 +17427,7 @@ license = stdenv.lib.licenses.mit;
 ({
   mkDerivation
 , aeson
+, aeson-options
 , array
 , base
 , bytestring
@@ -17469,7 +17467,6 @@ license = stdenv.lib.licenses.mit;
 , stm
 , tagged
 , text
-, text-format
 , time-units
 , transformers
 , universum
@@ -17487,6 +17484,7 @@ configureFlags = [
 ];
 libraryHaskellDepends = [
 aeson
+aeson-options
 array
 base
 bytestring
@@ -17524,7 +17522,6 @@ serokell-util
 stm
 tagged
 text
-text-format
 time-units
 transformers
 universum
@@ -17544,6 +17541,7 @@ license = stdenv.lib.licenses.mit;
 , acid-state
 , acid-state-exts
 , aeson
+, aeson-options
 , ansi-terminal
 , ansi-wl-pprint
 , asn1-encoding
@@ -17640,6 +17638,7 @@ executableHaskellDepends = [
 acid-state
 acid-state-exts
 aeson
+aeson-options
 ansi-terminal
 ansi-wl-pprint
 asn1-encoding
@@ -17726,6 +17725,7 @@ license = stdenv.lib.licenses.mit;
 ({
   mkDerivation
 , aeson
+, aeson-options
 , base
 , bytestring
 , cardano-sl-binary
@@ -17770,7 +17770,6 @@ license = stdenv.lib.licenses.mit;
 , tagged
 , template-haskell
 , text
-, text-format
 , transformers
 , universum
 , unliftio
@@ -17789,6 +17788,7 @@ configureFlags = [
 ];
 libraryHaskellDepends = [
 aeson
+aeson-options
 base
 bytestring
 cardano-sl-binary
@@ -17829,7 +17829,6 @@ stm
 tagged
 template-haskell
 text
-text-format
 transformers
 universum
 unliftio
@@ -17851,13 +17850,13 @@ cardano-sl-util-test
 containers
 data-default
 fmt
+formatting
 generic-arbitrary
 hspec
 lens
 mtl
 QuickCheck
 serokell-util
-text-format
 universum
 unordered-containers
 vector
@@ -17921,6 +17920,7 @@ license = stdenv.lib.licenses.mit;
 ({
   mkDerivation
 , aeson
+, aeson-options
 , base
 , bytestring
 , Cabal
@@ -17958,7 +17958,6 @@ license = stdenv.lib.licenses.mit;
 , stm
 , tagged
 , template-haskell
-, text-format
 , time-units
 , transformers
 , universum
@@ -17977,6 +17976,7 @@ configureFlags = [
 ];
 libraryHaskellDepends = [
 aeson
+aeson-options
 base
 bytestring
 Cabal
@@ -18012,7 +18012,6 @@ serokell-util
 stm
 tagged
 template-haskell
-text-format
 time-units
 transformers
 universum
@@ -18117,7 +18116,6 @@ license = stdenv.lib.licenses.mit;
 , tagged
 , template-haskell
 , text
-, text-format
 , th-lift-instances
 , time
 , time-units
@@ -18173,7 +18171,6 @@ stm
 tagged
 template-haskell
 text
-text-format
 th-lift-instances
 time
 time-units
@@ -18335,7 +18332,6 @@ license = stdenv.lib.licenses.mit;
 , stm
 , swagger2
 , text
-, text-format
 , time
 , time-units
 , transformers
@@ -18418,7 +18414,6 @@ servant-swagger-ui
 stm
 swagger2
 text
-text-format
 time
 time-units
 transformers
@@ -18478,7 +18473,6 @@ safecopy
 serokell-util
 servant-server
 stm
-text-format
 universum
 unordered-containers
 ];
@@ -18496,6 +18490,7 @@ license = stdenv.lib.licenses.mit;
 , acid-state
 , aeson
 , aeson-diff
+, aeson-options
 , aeson-pretty
 , async
 , base
@@ -18574,7 +18569,6 @@ license = stdenv.lib.licenses.mit;
 , swagger2
 , tabl
 , text
-, text-format
 , time
 , time-units
 , tls
@@ -18607,6 +18601,7 @@ isExecutable = true;
 libraryHaskellDepends = [
 acid-state
 aeson
+aeson-options
 aeson-pretty
 async
 base
@@ -18666,7 +18661,6 @@ sqlite-simple
 sqlite-simple-errors
 swagger2
 text
-text-format
 time
 time-units
 tls
@@ -18718,7 +18712,6 @@ servant-server
 stm
 swagger2
 text
-text-format
 universum
 unordered-containers
 wai
@@ -18776,7 +18769,6 @@ string-conv
 swagger2
 tabl
 text
-text-format
 time
 universum
 unordered-containers
@@ -18784,6 +18776,7 @@ vector
 ];
 benchmarkHaskellDepends = [
 aeson
+aeson-options
 async
 base
 bytestring
@@ -31468,33 +31461,29 @@ license = stdenv.lib.licenses.bsd3;
 ({
   mkDerivation
 , base
-, base16-bytestring
 , base64-bytestring
 , bytestring
 , containers
+, formatting
 , microlens
 , stdenv
 , text
-, text-format
 , time
 , time-locale-compat
 }:
 mkDerivation {
 
 pname = "fmt";
-version = "0.5.0.0";
-sha256 = "ce3e15e87c04b1dcafcea8d65f894de9427a89d296e1c26a358c625558d9d194";
-revision = "1";
-editedCabalFile = "1vdgh45qv5jk1ym4y54sjgk0cnqhrqqi6iirrw8drq20v1srbpl3";
+version = "0.6";
+sha256 = "5e6f1b510e6f11698c07df4f6369bd85f610eb0142d6b8e2e1ff078954361392";
 libraryHaskellDepends = [
 base
-base16-bytestring
 base64-bytestring
 bytestring
 containers
+formatting
 microlens
 text
-text-format
 time
 time-locale-compat
 ];
@@ -31913,28 +31902,45 @@ license = stdenv.lib.licenses.mit;
 "formatting" = callPackage
 ({
   mkDerivation
+, array
 , base
+, bytestring
 , clock
+, fetchgit
+, ghc-prim
+, integer-gmp
 , old-locale
 , scientific
+, semigroups
 , stdenv
 , text
-, text-format
 , time
+, transformers
 }:
 mkDerivation {
 
 pname = "formatting";
-version = "6.2.5";
-sha256 = "d0a3fafe5a3e733cefc12a1031dcd76d7b9cc3552f757ae720a286d4d3429f4c";
+version = "6.3.6";
+src = fetchgit {
+
+url = "https://github.com/chrisdone/formatting.git";
+sha256 = "1jsz2az06dcx1ni259j81jjwkv3k660ssyk20m4cjxzmymvigrin";
+rev = "444bc8b1190f9c7f94af41b6f538071545392754";
+
+};
 libraryHaskellDepends = [
+array
 base
+bytestring
 clock
+ghc-prim
+integer-gmp
 old-locale
 scientific
+semigroups
 text
-text-format
 time
+transformers
 ];
 doHaddock = false;
 doCheck = false;
@@ -51628,9 +51634,9 @@ pname = "log-warper";
 version = "1.8.10.1";
 src = fetchgit {
 
-url = "https://github.com/input-output-hk/log-warper.git";
-sha256 = "1m0px1187p1xkdp978jh45vpgkdbvrlm3ippg3jlv0zdzrfnx53s";
-rev = "fa925f9dadf239b38e2ffcc35f9d241a9fcb7d55";
+url = "https://github.com/angerman/log-warper.git";
+sha256 = "09jl7wb48q1vc3cll1bbdp8d2dh5dhcgxiyq1z7mpwfikdph0d4c";
+rev = "4af8114fbcd5698a4e1fbc653031f0300e29faee";
 
 };
 libraryHaskellDepends = [
@@ -70233,41 +70239,41 @@ license = stdenv.lib.licenses.mit;
 , base64-bytestring
 , bytestring
 , clock
-, containers
 , deepseq
-, directory
 , exceptions
-, extra
-, filepath
+, fetchgit
 , fmt
 , formatting
 , hashable
-, lens
-, log-warper
-, monad-control
+, microlens
+, microlens-mtl
 , mtl
-, optparse-applicative
+, o-clock
 , parsec
+, process
 , QuickCheck
 , quickcheck-instances
 , scientific
-, semigroups
 , stdenv
-, stm
 , template-haskell
 , text
-, text-format
+, th-lift-instances
 , transformers
 , universum
 , unordered-containers
 , vector
-, yaml
 }:
 mkDerivation {
 
 pname = "serokell-util";
-version = "0.8.0";
-sha256 = "3711f844d87556c4deb8d72dd0861ca9d1063ee28250a5f6e167ac758df11b6d";
+version = "0.9.0";
+src = fetchgit {
+
+url = "https://github.com/input-output-hk/serokell-util.git";
+sha256 = "0h4wcvp126w021bc2kglsbfywyvc9z3yf1sh1k4yy1an4ckh51jd";
+rev = "4ead9809e119483e7832da5f8224b0c4d4a2d5d6";
+
+};
 libraryHaskellDepends = [
 aeson
 ansi-terminal
@@ -70276,34 +70282,27 @@ base16-bytestring
 base64-bytestring
 bytestring
 clock
-containers
 deepseq
-directory
 exceptions
-extra
-filepath
 fmt
 formatting
 hashable
-lens
-log-warper
-monad-control
+microlens
+microlens-mtl
 mtl
-optparse-applicative
+o-clock
 parsec
+process
 QuickCheck
 quickcheck-instances
 scientific
-semigroups
-stm
 template-haskell
 text
-text-format
+th-lift-instances
 transformers
 universum
 unordered-containers
 vector
-yaml
 ];
 doHaddock = false;
 doCheck = false;
@@ -77373,10 +77372,10 @@ license = stdenv.lib.licenses.mit;
 mkDerivation {
 
 pname = "tasty-hedgehog";
-version = "0.1.0.2";
-sha256 = "1dc1ffb73bae9c6ccefb050a5489faae9b3144e987f8d054a9645d7e27884d32";
-revision = "2";
-editedCabalFile = "0kcsky6xnqpg2hpvpw50sdmjg50z1s57wbvxqmcjrd7wx8hpapdq";
+version = "0.2.0.0";
+sha256 = "5a107fc3094efc50663e4634331a296281318b38c9902969c2d2d215d754a182";
+revision = "4";
+editedCabalFile = "04d7lhn0dlqna0pqz7wxmz2y6vq7qar2m2g432z38cvm5na9w4y0";
 libraryHaskellDepends = [
 base
 hedgehog
@@ -77386,7 +77385,7 @@ tasty
 doHaddock = false;
 doCheck = false;
 homepage = "https://github.com/qfpl/tasty-hedgehog";
-description = "Integrates the hedgehog testing library with the tasty testing framework";
+description = "Integration for tasty and hedgehog";
 license = stdenv.lib.licenses.bsd3;
 
 }) {};
@@ -82620,6 +82619,9 @@ license = stdenv.lib.licenses.bsd3;
 , bytestring
 , containers
 , deepseq
+, fetchgit
+, fmt
+, formatting
 , ghc-prim
 , hashable
 , microlens
@@ -82629,7 +82631,6 @@ license = stdenv.lib.licenses.bsd3;
 , stdenv
 , stm
 , text
-, text-format
 , transformers
 , type-operators
 , unordered-containers
@@ -82639,13 +82640,21 @@ license = stdenv.lib.licenses.bsd3;
 mkDerivation {
 
 pname = "universum";
-version = "1.1.1";
-sha256 = "180a1e5711d33658dc2c32a13bd63af248ca633a39dacd18f7138ee34e988950";
+version = "1.2.0";
+src = fetchgit {
+
+url = "https://github.com/input-output-hk/universum.git";
+sha256 = "12ppiszywj0dsspwlhb8bzhsrlgszk8rvlhcy8il3ppz99mlnw5g";
+rev = "7f1b2483f71cacdfd032fe447064d6e0a1df50fc";
+
+};
 libraryHaskellDepends = [
 base
 bytestring
 containers
 deepseq
+fmt
+formatting
 ghc-prim
 hashable
 microlens
@@ -82654,7 +82663,6 @@ mtl
 safe-exceptions
 stm
 text
-text-format
 transformers
 type-operators
 unordered-containers
