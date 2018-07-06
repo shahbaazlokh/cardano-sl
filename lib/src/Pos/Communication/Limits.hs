@@ -51,6 +51,7 @@ module Pos.Communication.Limits
        ) where
 
 import           Universum
+import           Prelude (log)
 
 import qualified Crypto.SCRAPE as Scrape
 import           Data.Coerce (coerce)
