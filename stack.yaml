@@ -48,6 +48,9 @@ packages:
 - wallet-new # The new (unreleased) version of the wallet
 - node-ipc
 - acid-state-exts
+- ../universum
+- ../serokell-util
+- ../log-warper
 
 # IOHK projects:
 
@@ -165,10 +168,10 @@ packages:
 
 # Because log-warper mainline depends on a lifted-async which depends upon a
 # buggy async
-- location:
-    git: https://github.com/input-output-hk/log-warper.git
-    commit: fa925f9dadf239b38e2ffcc35f9d241a9fcb7d55
-  extra-dep: true
+# - location:
+#    git: https://github.com/angerman/log-warper.git
+#    commit: 13c21343897add4933b6efd10d6f8261a554b4ab
+#  extra-dep: true
 
 # Exposes a custom discovery function so you can specify the prefix.
 # https://github.com/hedgehogqa/haskell-hedgehog/compare/master...input-output-hk:master
@@ -192,6 +195,13 @@ packages:
     commit: ecfd3b307d8d13a6d12aff03055f25a39a17e182
   extra-dep: true
 
+# Need to adjust version bounds on serokell-util.
+# serokell-util has an upper bound preventing 6.3 for some reason
+# - location:
+#    git: https://github.com/angerman/serokell-util.git
+#    commit: 000b6cea24a9b33e0deff0a3e238e3f4e67f8610
+#  extra-dep: true
+
 nix:
   shell-file: shell.nix
 
@@ -208,11 +218,10 @@ extra-deps:
 - lifted-async-0.10.0.1
 
 # Serokell-specific utilities not on stackage
-- serokell-util-0.8.0
-# serokell-util has an upper bound preventing 6.3 for some reason.
-# TODO: investigate?
-- formatting-6.2.5
-
+- fmt-0.6
+# We *must* use 6.3.6 at least, otherwise `int` is synonymous with `build` and
+# will result in an infinite loop -> space leak
+- formatting-6.3.6
 # Following 9 are not on stackage.
 - pvss-0.2.0
 - systemd-1.1.2
@@ -258,6 +267,12 @@ extra-deps:
 
 # Needed for coin selection in the wallet
 - normaldistribution-1.1.0.3
+
+# This used to be Serokell.Aeson.Options
+- aeson-options-0.0.0
+
+# for universum to work with hedgehog-0.6+
+- tasty-hedgehog-0.2.0.0
 
 # This is for CI to pass --fast to all dependencies
 apply-ghc-options: everything
