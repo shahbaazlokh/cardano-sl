@@ -57,7 +57,7 @@ withdraw wr = withSublogger (LoggerName "withdraw") $ do
         logInfo ("Recaptcha result: " <> (captchaResp ^. to show . packed))
         unless (captchaResp ^. success) $ do
             let captchaErrs = captchaResp ^. errorCodes . to show . packedChars
-            throwError $ err500 { errBody = "Recaptcha had errors: " <> captchaErrs }
+            throwError $ err400 { errBody = "Recaptcha had errors: " <> captchaErrs }
     resp <- Client.withdraw (wr ^. wAddress)
     case resp of
         Left _ -> do
