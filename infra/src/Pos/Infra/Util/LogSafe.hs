@@ -68,9 +68,9 @@ import           Control.Monad.Trans (MonadTrans)
 import           Data.Foldable (Foldable, length, null)
 import           Data.List (isSuffixOf)
 import           Data.Reflection (Reifies (..), reify)
-import qualified Formatting.Buildable
 import           Data.Text.Lazy.Builder (Builder)
 import           Formatting (bprint, build, fconst, later, mapf, (%))
+import qualified Formatting.Buildable
 import           Formatting.Internal (Format (..))
 import qualified Language.Haskell.TH as TH
 import           Serokell.Util (listJson)

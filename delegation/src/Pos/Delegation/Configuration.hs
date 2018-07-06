@@ -15,8 +15,8 @@ import           Universum
 
 import           Data.Aeson (FromJSON (..), ToJSON (..), genericParseJSON,
                      genericToJSON)
-import           Data.Reflection (Given (..), give)
 import           Data.Aeson.Options (defaultOptions)
+import           Data.Reflection (Given (..), give)
 
 
 type HasDlgConfiguration = Given DlgConfiguration

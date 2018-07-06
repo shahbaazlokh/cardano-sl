@@ -7,8 +7,8 @@ module Pos.Core.Update.VoteId
 
 import           Universum
 
-import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, build, (%))
+import qualified Formatting.Buildable as Buildable
 
 import           Pos.Crypto (PublicKey)
 

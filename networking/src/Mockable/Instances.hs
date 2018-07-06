@@ -10,13 +10,13 @@
 module Mockable.Instances where
 
 import           Control.Monad.Trans.Reader (ReaderT (..))
-import           System.Wlog (LoggerNameBox)
 import           Mockable.Channel (ChannelT)
 import           Mockable.Class (MFunctor' (..), Mockable (..))
 import           Mockable.Concurrent (Promise, ThreadId)
 import           Mockable.Metrics
 import           Mockable.SharedAtomic (SharedAtomicT)
 import           Mockable.SharedExclusive (SharedExclusiveT)
+import           System.Wlog (LoggerNameBox)
 
 instance (Mockable d m, MFunctor' d (ReaderT r m) m) => Mockable d (ReaderT r m) where
     liftMockable dmt = ReaderT $ \r -> liftMockable $ hoist' (flip runReaderT r) dmt

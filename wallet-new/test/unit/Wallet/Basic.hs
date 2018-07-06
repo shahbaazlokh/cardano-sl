@@ -20,8 +20,8 @@ import           Universum hiding (State)
 
 import           Control.Lens.TH
 import qualified Data.Map as Map
-import qualified Formatting.Buildable
 import           Formatting (bprint, build, (%))
+import qualified Formatting.Buildable
 
 import           UTxO.DSL
 import           Wallet.Abstract

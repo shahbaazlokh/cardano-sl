@@ -5,8 +5,8 @@ module Pos.Lrc.Error
 
 import           Universum
 
-import qualified Formatting.Buildable
 import           Formatting (bprint, build, int, stext, (%))
+import qualified Formatting.Buildable
 
 import           Pos.Core.Slotting (EpochIndex)
 

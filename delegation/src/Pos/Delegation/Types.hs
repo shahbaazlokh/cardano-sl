@@ -13,8 +13,8 @@ module Pos.Delegation.Types
 
 import           Universum
 
-import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, (%))
+import qualified Formatting.Buildable as Buildable
 import           Serokell.Util.Text (listJson)
 
 import           Pos.Core (ComponentBlock (..), ProxySKHeavy, StakeholderId)

@@ -5,8 +5,8 @@ module Pos.Aeson.Update
     ) where
 
 import           Data.Aeson (FromJSON (..))
-import           Data.Aeson.TH (deriveToJSON)
 import           Data.Aeson.Options (defaultOptions)
+import           Data.Aeson.TH (deriveToJSON)
 import           Universum
 
 import           Pos.Core.Update (SystemTag (..))

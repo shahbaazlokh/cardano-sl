@@ -13,9 +13,9 @@ module Pos.Exception
        ) where
 
 import           Control.Exception.Safe (Exception (..))
-import qualified Formatting.Buildable
 import           Data.Typeable (cast)
 import           Formatting (bprint, stext, (%))
+import qualified Formatting.Buildable
 import           Serokell.Util (Color (Red), colorize)
 import           System.Wlog (WithLogger, logError)
 import qualified Text.Show

@@ -17,7 +17,7 @@ import qualified NeatInterpolation as N
 import           Options.Applicative (CommandFields, Mod, Parser, command,
                      execParser, footerDoc, fullDesc, header, help, helper,
                      info, infoOption, long, maybeReader, metavar, option,
-                     progDesc, subparser, value, strOption)
+                     progDesc, strOption, subparser, value)
 import           Pos.Communication (NodeId)
 import           Text.PrettyPrint.ANSI.Leijen (Doc)
 

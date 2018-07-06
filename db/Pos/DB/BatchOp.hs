@@ -12,9 +12,9 @@ module Pos.DB.BatchOp
 
 import           Universum
 
-import qualified Formatting.Buildable
 import qualified Database.RocksDB as Rocks
 import           Formatting (bprint)
+import qualified Formatting.Buildable
 import           Serokell.Util.Text (listJson)
 
 import           Pos.DB.Class (DBTag, MonadDB (dbWriteBatch))

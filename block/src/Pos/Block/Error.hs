@@ -9,9 +9,9 @@ module Pos.Block.Error
 import           Universum
 
 import           Control.Exception.Safe (Exception (..))
-import           Formatting.Buildable (Buildable (..))
 import           Data.Text.Lazy.Builder (Builder, fromText)
 import           Formatting (bprint, stext, (%))
+import           Formatting.Buildable (Buildable (..))
 
 import           Pos.Core (HeaderHash)
 import           Pos.Crypto (shortHashF)
