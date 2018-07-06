@@ -124,6 +124,7 @@ library
                      , QuickCheck
                      , acid-state
                      , aeson
+                     , aeson-options
                      , aeson-pretty
                      , async
                      , beam-core
