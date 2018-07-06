@@ -62,6 +62,7 @@ library
 
   build-depends:       QuickCheck
                      , aeson
+                     , aeson-options
                      , array
                      , base
                      , bytestring

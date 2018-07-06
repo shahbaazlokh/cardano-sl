@@ -61,6 +61,7 @@ library
     Pos.Aeson.Txp
 
   build-depends:       aeson
+                     , aeson-options
                      , base
                      , bytestring
                      , cardano-sl-binary

@@ -38,6 +38,7 @@ library
 
   build-depends:       QuickCheck
                      , aeson
+                     , aeson-options
                      , base
                      , cardano-sl-binary
                      , cardano-sl-core
