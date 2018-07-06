@@ -5,6 +5,8 @@
 {-# LANGUAGE TypeFamilies          #-}
 {-# LANGUAGE UndecidableInstances  #-}
 
+{-# OPTIONS_GHC -fno-warn-orphans  #-}
+
 module Mockable.Instances where
 
 import           Control.Monad.Trans.Reader (ReaderT (..))

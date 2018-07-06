@@ -40,7 +40,7 @@ import           Control.Monad.Trans.Reader (ReaderT (..))
 import           Data.Aeson (ToJSON, encode)
 import           Data.ByteString.Lazy.Char8 (hPutStrLn)
 import           Formatting (sformat, shown, (%))
-import           System.IO (Handle)
+import           System.IO (Handle, hFlush)
 import           System.Wlog (CanLog, HasLoggerName (..), WithLogger,
                      logWarning)
 import           Universum
