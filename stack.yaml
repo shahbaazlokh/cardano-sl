@@ -199,6 +199,14 @@ packages:
     commit: 7f1b2483f71cacdfd032fe447064d6e0a1df50fc
   extra-dep: true
 
+
+# use github source, until we can use the 6.3.6 release from
+# hackage, that is, once `cabal update` ran.
+- location:
+    git: https://github.com/chrisdone/formatting.git
+    commit: 444bc8b1190f9c7f94af41b6f538071545392754
+  extra-dep: true
+
 # Need to adjust version bounds on serokell-util.
 # serokell-util has an upper bound preventing 6.3 for some reason
 - location:
@@ -224,8 +232,10 @@ extra-deps:
 # Serokell-specific utilities not on stackage
 - fmt-0.6
 # We *must* use 6.3.6 at least, otherwise `int` is synonymous with `build` and
-# will result in an infinite loop -> space leak
-- formatting-6.3.6
+# will result in an infinite loop -> space leak; however we can't yet because
+# CI hasn't run cabal update yet.
+# - formatting-6.3.6
+
 # Following 9 are not on stackage.
 - pvss-0.2.0
 - systemd-1.1.2
