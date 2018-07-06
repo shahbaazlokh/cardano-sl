@@ -588,6 +588,7 @@ benchmark cardano-sl-wallet-new-bench
 
   type:                exitcode-stdio-1.0
   build-depends:       aeson
+                     , aeson-options
                      , async
                      , base
                      , bytestring
