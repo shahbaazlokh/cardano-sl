@@ -37,7 +37,7 @@ import           Options.Applicative (Parser, ParserInfo, ParserResult (..),
                      defaultPrefs, execParserPure, footerDoc, fullDesc,
                      handleParseResult, header, help, helper, info, infoOption,
                      long, metavar, progDesc, renderFailure, short, strOption)
-import           Serokell.Aeson.Options (defaultOptions)
+import           Data.Aeson.Options (defaultOptions)
 import           System.Directory (createDirectoryIfMissing, doesFileExist,
                      removeFile)
 import qualified System.Directory as Sys

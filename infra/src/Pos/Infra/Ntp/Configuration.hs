@@ -11,7 +11,7 @@ import           Data.Aeson (FromJSON (..), ToJSON (..), genericParseJSON,
 import           Data.List.NonEmpty as NE
 import           Data.Time.Units (fromMicroseconds)
 import           Ntp.Client (NtpClientSettings (..))
-import           Serokell.Aeson.Options (defaultOptions)
+import           Data.Aeson.Options (defaultOptions)
 
 data NtpConfiguration = NtpConfiguration
     {

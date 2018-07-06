@@ -17,7 +17,7 @@ import           Data.Aeson (FromJSON (..), ToJSON (..), genericParseJSON,
 import           Data.Reflection (Given (..), give)
 import           Pos.Aeson.Core ()
 import           Pos.Core (Address)
-import           Serokell.Aeson.Options (defaultOptions)
+import           Data.Aeson.Options (defaultOptions)
 
 
 type HasTxpConfiguration = Given TxpConfiguration
