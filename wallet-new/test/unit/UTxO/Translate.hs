@@ -234,9 +234,9 @@ verifyBlocksPrefix blocks =
         (OldestFirst [])
         (Right <$> geb ::  OldestFirst NE Block)
     validateSuccEpoch :: ProtocolMagic
-                       -> EpochBlocks NE
-                       -> ( HasConfiguration
-                            => Verify VerifyBlocksException (OldestFirst NE Undo))
+                      -> EpochBlocks NE
+                      -> ( HasConfiguration
+                           => Verify VerifyBlocksException (OldestFirst NE Undo))
     validateSuccEpoch pm (SuccEpochBlocks ebb emb) =
       Verify.verifyBlocksPrefix
         pm

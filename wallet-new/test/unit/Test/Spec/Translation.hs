@@ -184,7 +184,7 @@ spanEpochs epochSlots GenesisValues{..} = OldestFirst $
        -> Value         -- r1's current total balance
        -> Int           -- Number of cycles to go
        -> [Block h Addr]
-    go _ _ _ _ _ 0 = []
+    go _ _ _ _ _ 1 = []
     go freshHash r0utxo r1utxo r0balance r1balance n =
         let tPing = ping freshHash       r0utxo r0balance
             tPong = pong (freshHash + 1) r1utxo r1balance

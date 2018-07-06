@@ -450,12 +450,6 @@ instance DSL.Hash h Addr => Interpret h (DSL.Block h Addr) where
   int :: forall e m. (Monad m)
       => DSL.Block h Addr -> IntT h e m RawResolvedBlock
   int (OldestFirst txs) = do
-      (txs', resolvedTxInputs) <- unpack <$> mapM int txs
-      leaders <- gets icEpochLeaders
-      prev    <- gets icPrevBlock
-      slot    <- gets icNextSlot
-      block   <- liftTranslateInt $ mkBlock leaders prev slot txs'
-      pushBlock block
       -- Create an epoch boundary block on the epoch boundary
       ic <- get
       mebb <- if isEpochBoundary ic
@@ -470,6 +464,13 @@ instance DSL.Hash h Addr => Interpret h (DSL.Block h Addr) where
                     sbb = mkGenesisBlock testProtocolMagic (Right $ icPrevBlock ic) newEpoch newLeaders
                 pushEpochBoundary sbb >> return (Just sbb)
               else return Nothing
+
+      (txs', resolvedTxInputs) <- unpack <$> mapM int txs
+      leaders <- gets icEpochLeaders
+      prev    <- gets icPrevBlock
+      slot    <- gets icNextSlot
+      block   <- liftTranslateInt $ mkBlock leaders prev slot txs'
+      pushBlock block
       return $ mkRawResolvedBlock block mebb resolvedTxInputs
     where
       unpack :: [RawResolvedTx] -> ([TxAux], [ResolvedTxInputs])
