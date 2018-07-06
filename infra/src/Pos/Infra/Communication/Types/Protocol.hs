@@ -52,7 +52,7 @@ import           Data.Aeson (FromJSON (..), ToJSON (..), Value)
 import           Data.Aeson.Types (Parser)
 import qualified Data.ByteString.Base64 as B64 (decode, encode)
 import qualified Data.HashMap.Strict as HM
-import qualified Data.Text.Buildable as B
+import qualified Formatting.Buildable as B
 import qualified Data.Text.Encoding as Text (decodeUtf8, encodeUtf8)
 import qualified Data.Text.Internal.Builder as B
 import           Formatting (bprint, build, hex, sformat, shown, (%))

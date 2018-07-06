@@ -203,7 +203,7 @@ library
                      , serokell-util
                      , template-haskell
                      , text
-                     , text-format
+                     , formatting
                      , th-lift-instances
                      , time
                      , time-units

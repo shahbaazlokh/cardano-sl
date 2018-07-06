@@ -59,7 +59,7 @@ import qualified Data.List.NonEmpty as NonEmpty
 import qualified Data.Map.Strict as M
 import           Data.Set (Set)
 import qualified Data.Set as Set
-import           Data.Text.Buildable (build)
+import           Formatting.Buildable (build)
 import           Formatting (bprint, (%))
 import qualified Formatting as F
 import           Pos.Crypto.Hashing (WithHash (..))

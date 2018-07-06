@@ -20,7 +20,7 @@ module Pos.GState.BlockExtra
 
 import           Universum hiding (init)
 
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import qualified Database.RocksDB as Rocks
 import           Formatting (bprint, build, (%))
 import           Pipes (Producer, yield)

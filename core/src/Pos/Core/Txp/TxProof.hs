@@ -6,7 +6,7 @@ module Pos.Core.Txp.TxProof
 import           Universum
 
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Fmt (genericF)
 
 import           Pos.Binary.Class (Bi (..), encodeListLen, enforceSize)

@@ -35,7 +35,7 @@ import           Data.Functor (($>))
 import           Data.Int (Int64)
 import           Data.Monoid ((<>))
 import           Data.Text (Text)
-import           Data.Text.Buildable (Buildable (build))
+import           Formatting.Buildable (Buildable (build))
 import           Data.Time.Units (toMicroseconds)
 
 import qualified Formatting as F

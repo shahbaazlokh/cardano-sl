@@ -5,7 +5,7 @@ module Pos.Core.Genesis.WStakeholders
 
 import           Universum
 
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, (%))
 import           Serokell.Util (mapJson)
 

@@ -7,7 +7,7 @@ module Pos.Update.Poll.Failure
 
 import           Universum hiding (id, last)
 
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, build, int, sformat, stext, (%))
 import           Serokell.Data.Memory.Units (Byte, memory)
 

@@ -164,7 +164,7 @@ library
                       , template-haskell
                       , tar
                       , text
-                      , text-format
+                      , formatting
                       , time
                       , time-units
                       , transformers

@@ -106,7 +106,7 @@ library
                      , stm
                      , tagged
                      , template-haskell
-                     , text-format
+                     , formatting
                      , time-units
                      , transformers
                      , universum

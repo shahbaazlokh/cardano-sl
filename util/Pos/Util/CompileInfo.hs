@@ -26,7 +26,7 @@ import           Universum
 import           Data.FileEmbed (dummySpaceWith)
 import           Data.Reflection (Given (..), give, given)
 import qualified Data.Text as T
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, stext, (%))
 import           Pos.Util.CompileInfoGit
 

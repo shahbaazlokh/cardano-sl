@@ -8,7 +8,7 @@ module Pos.Core.Delegation.HeavyDlgIndex
 import           Universum
 
 import           Data.SafeCopy (SafeCopy (..), contain, safeGet, safePut)
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, build)
 
 import           Pos.Binary.Class (Bi (..))

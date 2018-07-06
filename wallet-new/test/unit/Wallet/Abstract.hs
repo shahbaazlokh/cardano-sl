@@ -23,7 +23,7 @@ import           Universum
 import qualified Data.Foldable as Fold
 import qualified Data.Map as Map
 import qualified Data.Set as Set
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint)
 import           Pos.Core.Chrono
 import           Serokell.Util (mapJson)

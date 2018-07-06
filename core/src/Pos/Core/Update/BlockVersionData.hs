@@ -6,7 +6,7 @@ module Pos.Core.Update.BlockVersionData
 import           Universum
 
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Data.Time.Units (Millisecond)
 import           Formatting (bprint, build, int, (%))
 import           Serokell.Data.Memory.Units (Byte, memory)

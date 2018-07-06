@@ -20,7 +20,7 @@ import           Universum hiding (State)
 
 import           Control.Lens.TH
 import qualified Data.Map as Map
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, build, (%))
 
 import           UTxO.DSL

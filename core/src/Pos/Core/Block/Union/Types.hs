@@ -50,7 +50,7 @@ import           Control.Lens (Getter, LensLike', choosing, makePrisms, to)
 
 import           Data.SafeCopy (SafeCopy (..), contain, safeGet, safePut)
 import qualified Data.Serialize as Cereal
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (Format, bprint, build, (%))
 import           Universum
 

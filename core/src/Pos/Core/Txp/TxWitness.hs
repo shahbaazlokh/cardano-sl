@@ -9,7 +9,7 @@ import           Universum
 
 import qualified Data.ByteString.Lazy as LBS
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, build, (%))
 import           Serokell.Util.Base16 (base16F)
 

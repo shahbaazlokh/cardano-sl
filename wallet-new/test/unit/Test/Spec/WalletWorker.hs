@@ -4,7 +4,7 @@ module Test.Spec.WalletWorker (
 
 import           Universum
 
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, shown, (%))
 import           Pos.Core.Chrono
 import           Test.QuickCheck (arbitrary, frequency, listOf, suchThat)

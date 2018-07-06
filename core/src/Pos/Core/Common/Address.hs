@@ -62,7 +62,7 @@ import           Data.ByteString.Base58 (Alphabet (..), bitcoinAlphabet,
                      decodeBase58, encodeBase58)
 import           Data.Hashable (Hashable (..))
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (Format, bprint, build, builder, later, (%))
 import           Serokell.Data.Memory.Units (Byte)
 

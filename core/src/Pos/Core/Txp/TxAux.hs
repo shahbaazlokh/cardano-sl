@@ -7,7 +7,7 @@ module Pos.Core.Txp.TxAux
 import           Universum
 
 import           Control.Monad.Except (MonadError)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (Format, bprint, build, later, (%))
 import           Serokell.Util.Text (listJsonIndent)
 

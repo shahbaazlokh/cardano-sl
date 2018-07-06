@@ -22,7 +22,7 @@ import qualified Data.Aeson as JSON (decode, encode)
 import qualified Data.ByteString.Lazy.Char8 as BS
 import           Data.FileEmbed (embedStringFile)
 import qualified Data.List as List
-import           Data.Text.Buildable (Buildable (..))
+import           Formatting.Buildable (Buildable (..))
 import           Data.Text.Internal.Builder (fromText, toLazyText)
 import           Language.Haskell.TH (ExpQ, Q, loc_filename, runIO)
 import           Language.Haskell.TH.Syntax (qLocation)

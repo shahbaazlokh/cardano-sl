@@ -4,7 +4,7 @@ module Pos.Core.Txp.TxMsg
 
 import           Universum
 
-import           Data.Text.Buildable (Buildable (..))
+import           Formatting.Buildable (Buildable (..))
 import           Formatting (bprint, (%))
 
 import           Pos.Core.Txp.TxAux (TxAux (..), txaF)

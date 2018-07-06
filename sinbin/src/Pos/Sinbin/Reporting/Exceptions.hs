@@ -11,7 +11,7 @@ module Pos.Sinbin.Reporting.Exceptions
 import           Universum
 
 import           Control.Exception.Safe (Exception (..))
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, shown, stext, string, (%))
 
 import           Pos.Exception (cardanoExceptionFromException,

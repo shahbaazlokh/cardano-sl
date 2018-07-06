@@ -22,8 +22,8 @@ import qualified Data.ByteArray as ByteArray
 import qualified Data.ByteString as BS
 import           Data.Default (Default (..))
 import           Data.Semigroup (Semigroup)
-import           Data.Text.Buildable (build)
-import qualified Data.Text.Buildable as B
+import           Formatting.Buildable (build)
+import qualified Formatting.Buildable as B
 import           Formatting (int, sformat, (%))
 import qualified Prelude
 import           Universum

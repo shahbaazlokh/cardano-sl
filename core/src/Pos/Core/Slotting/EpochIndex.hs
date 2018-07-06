@@ -9,7 +9,7 @@ import           Universum
 import           Control.Lens (choosing)
 import           Data.Ix (Ix)
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, int, (%))
 
 import           Pos.Binary.Class (Bi (..))

@@ -196,7 +196,7 @@ library
                       , tagged
                       , template-haskell
                       , text
-                      , text-format
+                      , formatting
                       , time
                       , time-units
                       , tls
@@ -340,7 +340,7 @@ test-suite cardano-test
                      , stm
                      , tagged
                      , text
-                     , text-format
+                     , formatting
                      , time
                      , time-units
                      , universum >= 0.1.11

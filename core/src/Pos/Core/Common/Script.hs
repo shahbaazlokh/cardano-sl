@@ -7,7 +7,7 @@ module Pos.Core.Common.Script
 import           Universum
 
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, int, (%))
 import qualified PlutusCore.Program as PLCore
 

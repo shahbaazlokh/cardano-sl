@@ -67,7 +67,7 @@ import           Control.Lens.TH (makeLenses)
 import qualified Data.IxSet.Typed as IxSet
 import           Data.SafeCopy (base, deriveSafeCopy)
 
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, build, (%))
 
 import qualified Pos.Core as Core

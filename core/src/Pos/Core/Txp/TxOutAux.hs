@@ -5,7 +5,7 @@ module Pos.Core.Txp.TxOutAux
 import           Universum
 
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, build, (%))
 
 import           Pos.Binary.Class (Cons (..), Field (..), deriveSimpleBi)

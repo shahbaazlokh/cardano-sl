@@ -8,7 +8,7 @@ import           Universum
 
 import qualified Data.List as List
 import qualified Data.Set as Set
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, build, (%))
 import           Pos.Core.Chrono
 

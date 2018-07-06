@@ -101,7 +101,7 @@ library
                      , tagged
                      , template-haskell
                      , text
-                     , text-format
+                     , formatting
                      , transformers
                      , universum
                      , unliftio
@@ -164,7 +164,7 @@ test-suite test
                      , mtl
                      , QuickCheck
                      , serokell-util
-                     , text-format
+                     , formatting
                      , universum
                      , unordered-containers
                      , vector

@@ -6,7 +6,7 @@ module Pos.Core.Update.BlockVersion
 import           Universum
 
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, shown)
 import qualified Prelude
 

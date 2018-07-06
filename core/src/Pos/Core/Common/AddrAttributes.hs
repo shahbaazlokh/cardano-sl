@@ -6,7 +6,7 @@ import           Universum
 
 import qualified Data.ByteString.Lazy as LBS
 import           Data.SafeCopy (base, deriveSafeCopySimple)
-import qualified Data.Text.Buildable as Buildable
+import qualified Formatting.Buildable as Buildable
 import           Formatting (bprint, build, builder, (%))
 
 import           Pos.Binary.Class (Bi, decode, encode)

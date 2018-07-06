@@ -89,7 +89,7 @@ library
                       , serokell-util
                       , stm
                       , text
-                      , text-format
+                      , formatting
                       , time-units
                       , transformers
                       , universum
@@ -169,7 +169,7 @@ test-suite test
                      , random
                      , serokell-util >= 0.1.3.4
                      , text
-                     , text-format
+                     , formatting
                      , time-units
                      , universum >= 0.1.11
                      , unordered-containers

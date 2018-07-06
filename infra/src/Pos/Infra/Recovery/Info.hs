@@ -12,7 +12,7 @@ module Pos.Infra.Recovery.Info
 
 import           Universum
 
-import qualified Data.Text.Buildable
+import qualified Formatting.Buildable
 import           Formatting (bprint, build, sformat, stext, (%))
 import           System.Wlog (WithLogger, logDebug)
 
